@@ -1,6 +1,6 @@
-package com.example.coolweather.model;
+package com.example.model;
 
-public class Country {
+public class County {
 
 private int id;
 	
