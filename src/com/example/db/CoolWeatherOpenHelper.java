@@ -4,7 +4,12 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
-
+    
+    /**
+     * 
+     * 创建coolweatheroperhelper类并继承父类sqliteopenhelper
+     *
+     */
 public class CoolWeatherOpenHelper extends SQLiteOpenHelper {
 	
 	public CoolWeatherOpenHelper(Context context, String name,
@@ -16,7 +21,7 @@ public class CoolWeatherOpenHelper extends SQLiteOpenHelper {
 			+"provices_name text"
 			+"provices_code text)";
 	/**
-	 * province表建表语句
+	 * province表建表语句，其中包含name和code两个语句
 	 */
 	
 	public static final String CREAT_CITY="create table City("
@@ -25,7 +30,7 @@ public class CoolWeatherOpenHelper extends SQLiteOpenHelper {
 			+"city_code text,"
 			+"province_id integer)";
 	/**
-	 * city表建表语句
+	 * city表建表语句，其中包含name和code和provin_id三个语句
 	 */
 	
 	public static final String CREAT_COUNTY="create table County("
@@ -34,7 +39,7 @@ public class CoolWeatherOpenHelper extends SQLiteOpenHelper {
 			+"county_code text"
 			+"city_id integer)";
 	/**
-	 * county表建表语句
+	 * county表建表语句，其中包含name和code和city_id三个语句
 	 */
 	
 	@Override
@@ -46,7 +51,7 @@ public class CoolWeatherOpenHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-	
+	//继承父类的方法
 		
 	}
 

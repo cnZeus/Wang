@@ -16,12 +16,12 @@ import android.database.sqlite.SQLiteDatabase;
 public class CoolWeatherDB {
 
 	/**
-	 * 数据库名
+	 * 数据库名，定义为cool_weather
 	 */
 	public static final String DB_NAME = "cool_weather";
 
 	/**
-	 * 数据库版本
+	 * 数据库版本，定义为1
 	 */
 	public static final int VERSION = 1;
 
@@ -30,7 +30,7 @@ public class CoolWeatherDB {
 	private SQLiteDatabase db;
 
 	/**
-	 * 构造方法私有化
+	 * 构造方法私有化，CoolWeatherDB方法只能在本类中被调用
 	 */
 	private CoolWeatherDB(Context context) {
 		CoolWeatherOpenHelper dbHelper = new CoolWeatherOpenHelper(context,
@@ -39,7 +39,7 @@ public class CoolWeatherDB {
 	}
 
 	/**
-	 * 获取CoolWeatherDB的实例
+	 * 获取CoolWeatherDB的实例，即coolWeatherDB为空创建一个新的，并返回
 	 */
 	public synchronized static CoolWeatherDB getInstance(Context context) {
 		if (coolWeatherDB == null) {
@@ -49,7 +49,7 @@ public class CoolWeatherDB {
 	}
 
 	/**
-	 * 将Province实例存储到数据库
+	 * 将Province实例存储到数据库，即其中的province_name，province_code语句
 	 */
 	public void saveProvince(Province province) {
 		if (province != null) {
@@ -61,7 +61,7 @@ public class CoolWeatherDB {
 	}
 
 	/**
-	 * 从数据库读取全国所有的省份信息
+	 * 从数据库读取全国所有的省份信息，返回一个list表
 	 */
 	public List<Province> loadProvinces() {
 		List<Province> list = new ArrayList<Province>();
@@ -82,7 +82,7 @@ public class CoolWeatherDB {
 	}
 
 	/**
-	 * 将City实例存储到数据库
+	 * 将City实例存储到数据库，即其中的city_name，city_code，province_id语句
 	 */
 	public void saveCity(City city) {
 		if (city != null) {
@@ -95,7 +95,7 @@ public class CoolWeatherDB {
 	}
 
 	/**
-	 * 从数据库读取某省下所有的城市信息
+	 * 从数据库读取某省下所有的城市信息，返回相应的list表
 	 */
 	public List<City> loadCities(int provinceId) {
 		List<City> list = new ArrayList<City>();
@@ -117,7 +117,7 @@ public class CoolWeatherDB {
 	}
 
 	/**
-	 * 将Country实例存储到数据库
+	 * 将Country实例存储到数据库，即其中的county_name，county_code，city_id语句
 	 */
 	public void saveCounty(County county) {
 		if (county != null) {
@@ -130,7 +130,7 @@ public class CoolWeatherDB {
 	}
 
 	/**
-	 * 从数据库读取某城市下所有的县信息
+	 * 从数据库读取某城市下所有的县信息，返回相应的list表
 	 */
 	public List<County> loadCounties(int cityId) {
 		List<County> list = new ArrayList<County>();
