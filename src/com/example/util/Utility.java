@@ -1,5 +1,6 @@
 package com.example.util;
 
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -20,7 +21,7 @@ import android.text.TextUtils;
 public class Utility {
 
 	/**
-	 * 解析和处理服务器返回的省级数据
+	 * 解析和处理服务器返回的省级数据，即其中的ProvinceCode和ProvinceName
 	 */
 	public synchronized static boolean handleProvincesResponse(
 			CoolWeatherDB coolWeatherDB, String response) {
@@ -42,7 +43,7 @@ public class Utility {
 	}
 
 	/**
-	 * 解析和处理服务器返回的市级数据
+	 * 解析和处理服务器返回的市级数据，即其中的CityCode，CityName和ProvinceId
 	 */
 	public static boolean handleCitiesResponse(CoolWeatherDB coolWeatherDB,
 			String response, int provinceId) {
@@ -65,7 +66,7 @@ public class Utility {
 	}
 
 	/**
-	 * 解析和处理服务器返回的县级数据
+	 * 解析和处理服务器返回的县级数据，即其中的CountyCode，CountyName和CityId
 	 */
 	public static boolean handleCountiesResponse(CoolWeatherDB coolWeatherDB,
 			String response, int cityId) {
@@ -88,7 +89,7 @@ public class Utility {
 	}
 
 	/**
-	 *解析和处理服务器返回的JSON类型天气数据
+	 *解析和处理服务器返回的JSON类型天气数据，利用trycath方法来读取文件
 	 */
 	public static void handleWeatherResponse(Context context, String response) {
 		try {
